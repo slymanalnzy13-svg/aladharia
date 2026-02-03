@@ -25,7 +25,7 @@ html {
 
 body {
   background: linear-gradient(rgba(7, 10, 20, 0.75), rgba(7, 10, 20, 0.75)),
-    url("https://cdn.discordapp.com/attachments/1467619809540964707/1467619880869302395/a_9cfeb8a91f09593523a250cb417d7c5d33.gif?ex=69810b06&is=697fb986&hm=9c882790dba5f107baa46c428248dcd3cbb4aee085c5d3e2bfd987694cdd1d8c")
+    url("assets/background.gif")
       center / cover fixed no-repeat;
   color: var(--text);
   min-height: 100vh;
