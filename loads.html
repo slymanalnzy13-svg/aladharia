@@ -66,24 +66,44 @@
 
       const totalLoads = 60;
       const makeNumber = (value) => value.toString().padStart(3, "0");
+      const loadsData = Array.from({ length: totalLoads }, (_, index) => {
+        const number = index + 1;
 
-      for (let i = 1; i <= totalLoads; i += 1) {
+        if (number === 1) {
+          return {
+            title: "تويوتا تكزما",
+            meta: "النوع: حمولة 80 | نوع السحب: قلص صغير",
+            image: "assets/load-001.png.png",
+            alt: "تويوتا تكزما",
+          };
+        }
+
+        return {
+          title: `حمولة رقم ${makeNumber(number)}`,
+          meta: "سعر الحمولة: —",
+          image: placeholderImage,
+          alt: `حمولة رقم ${number}`,
+        };
+      });
+
+      for (let i = 0; i < loadsData.length; i += 1) {
+        const load = loadsData[i];
         const card = document.createElement("a");
         card.className = "load-card";
         card.href = "load-details.html";
 
         const image = document.createElement("img");
         image.className = "load-image";
-        image.src = placeholderImage;
-        image.alt = `حمولة رقم ${i}`;
+        image.src = load.image;
+        image.alt = load.alt;
 
         const title = document.createElement("h3");
         title.className = "load-title";
-        title.textContent = `حمولة رقم ${makeNumber(i)}`;
+        title.textContent = load.title;
 
         const meta = document.createElement("p");
         meta.className = "load-meta";
-        meta.textContent = "سعر الحمولة: —";
+        meta.textContent = load.meta;
 
         card.append(image, title, meta);
         loadsGrid.appendChild(card);
